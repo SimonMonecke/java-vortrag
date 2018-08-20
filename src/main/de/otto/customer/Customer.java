@@ -19,8 +19,6 @@ public class Customer {
         this.creditcard = creditcard;
         this.wishlist = new HashSet<>();
         this.boughtArticlesPerCategory = new HashMap<>();
-
-        customerCount++;
     }
 
     public static void resetCustomerCount() {
