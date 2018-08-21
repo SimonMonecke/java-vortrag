@@ -17,7 +17,7 @@ import static org.testng.AssertJUnit.assertFalse;
 public class CustomerTest {
     @Test
     public void shouldReturnName() {
-        // Dieser Test soll überprüfen, ob der Name, den ich im Konstruktor angegeben habe (1. Parameter, "someName"),
+        // Dieser Test soll überprüfen, ob der Name, den ich im Konstruktor angegeben habe (1. Parameter, hier: "someName"),
         // wirklich im Customer gespeichert wird und zurückgegeben wird, wenn wir die Methode .getName() aufrufen
         // given
         Customer customer = new Customer("someName", 42, new Creditcard("123", "someDate"));
@@ -60,7 +60,7 @@ public class CustomerTest {
     @Test
     public void shouldReturnFalseIfUserIsFullAged() {
         // Dieser Test soll überprüfen, ob die Methode .isFullAged auch wirklich false zurückgibt, wenn der Customer
-        // unter 18 (2. Parameter) ist
+        // unter 18 (2. Parameter, hier: 17) ist
         // given
         Customer customer = new Customer("someName", 17, new Creditcard("123", "someDate"));
 
@@ -73,8 +73,8 @@ public class CustomerTest {
 
     @Test
     public void shouldReturnTrueIfUserIsFullAgedAndHasACreditCard() {
-        // Dieser Test soll überprüfen, ob die Methode .isValid() true zurückgibt, wenn der Customer min. 18 (hier: 42)
-        // ist und das Feld user.creditcard gesetzt ist (d.h. der Wert des Feldes ist ungleich null)
+        // Dieser Test soll überprüfen, ob die Methode .isValid() true zurückgibt, wenn der Customer min. 18 (2. Parameter, hier: 42)
+        // ist und das Feld customer.creditcard gesetzt ist (d.h. der Wert des Feldes ist ungleich null)
         // given
         Customer customer = new Customer("someName", 42, new Creditcard("123", "someDate"));
 
@@ -87,8 +87,8 @@ public class CustomerTest {
 
     @Test
     public void shouldReturnFalseIfUserIsNotFullAgedAndHasACreditCard() {
-        // Dieser Test soll überprüfen, ob die Methode .isValid() false zurückgibt, wenn der Customer unter 18 (hier: 17)
-        // ist und das Feld user.creditcard gesetzt ist (d.h. der Wert des Feldes ist ungleich null)
+        // Dieser Test soll überprüfen, ob die Methode .isValid() false zurückgibt, wenn der Customer unter 18 (2. Parameter, hier: 17)
+        // ist und das Feld customer.creditcard gesetzt ist (d.h. der Wert des Feldes ist ungleich null)
         // given
         Customer customer = new Customer("someName", 17, new Creditcard("123", "someDate"));
 
@@ -102,7 +102,7 @@ public class CustomerTest {
     @Test
     public void shouldReturnFalseIfUserIsFullAgedAndHasNoCreditCard() {
         // Dieser Test soll überprüfen, ob die Methode .isValid() false zurückgibt, wenn der Customer zwar min. 18
-        // (hier: 42) aber keine Kreditkarte hinterlegt ist (customer.creditcard ist gleich null)
+        // (2. Parameter, hier: 42) aber keine Kreditkarte hinterlegt ist (customer.creditcard ist gleich null)
         // given
         Customer customer = new Customer("someName", 42, null);
 
@@ -115,7 +115,7 @@ public class CustomerTest {
 
     @Test
     public void shouldReturnFalseIfUserIsFullAgedAndCreditCardNumberIsEmpty() {
-        // Dieser Test soll überprüfen, ob die Methode .isValid() false zurückgibt, wenn der Customer zwar min. 18 ist
+        // Dieser Test soll überprüfen, ob die Methode .isValid() false zurückgibt, wenn der Customer zwar min. 18 (2. Parameter, hier: 42) ist
         // , er auch eine Kreditkarte besitzt, aber die Kreditkartennummer leer (="") ist
         // given
         Customer customer = new Customer("someName", 42, new Creditcard("", "someDate"));
